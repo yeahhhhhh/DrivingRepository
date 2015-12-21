@@ -10,6 +10,10 @@
 
 @interface Accont : NSObject
 /**
+ *  驾照类型
+ */
+@property(nonatomic,copy)NSString *divingType;
+/**
  *  登录用户名
  */
 @property(nonatomic,copy)NSString *loginUser;

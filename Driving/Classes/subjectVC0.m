@@ -12,6 +12,7 @@
 #import "SubjectOneCell.h"
 #import "SubjectOneFrame.h"
 #import "MBProgressHUD+MJ.h"
+#import "Accont.h"
 @interface subjectVC0 ()
 @property (nonatomic, strong) NSMutableArray *frameArray;//里面存放的SubjectOneFrame(模型)＋ 数据 每一个SubjectOneFrame(微博模型)代表一个问题
 
@@ -65,7 +66,8 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"key"] = @"fcb4b802789b39694b9c867cd74087e2";
     params[@"subject"] = @1;
-    params[@"model"] = @"a2";
+    params[@"model"] = [Accont shareAccount].divingType;
+    NSLog(@"%@",[Accont shareAccount].divingType);
     params[@"testType"] = @"rand";
 
     // 3.发送请求

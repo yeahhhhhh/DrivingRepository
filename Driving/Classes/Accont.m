@@ -10,6 +10,7 @@
 #define kUserKey @"user"
 #define kPwdKey @"pwd"
 #define kLoginKey @"login"
+#define kdivingTypeKey @"type"
 @implementation Accont
 
 +(instancetype)shareAccount{
@@ -23,13 +24,15 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
 
-            acount = [super allocWithZone:zone];
-            
-            //从沙盒获取上次的用户登录信息
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            acount.loginUser = [defaults objectForKey:kUserKey];
-            acount.loginPwd = [defaults objectForKey:kPwdKey];
-            acount.login = [defaults boolForKey:kLoginKey];
+        acount = [super allocWithZone:zone];
+        
+        //从沙盒获取上次的用户登录信息
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        acount.loginUser = [defaults objectForKey:kUserKey];
+        acount.loginPwd = [defaults objectForKey:kPwdKey];
+        acount.login = [defaults boolForKey:kLoginKey];
+        acount.divingType = [defaults objectForKey:kdivingTypeKey];
+        
     });
     
     return acount;
@@ -37,11 +40,12 @@
 }
 -(void)saveToSandBox{
     
-    // 保存user pwd login
+    // 保存user pwd login divingType
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:self.loginUser forKey:kUserKey];
     [defaults setObject:self.loginPwd forKey:kPwdKey];
     [defaults setBool:self.isLogin forKey:kLoginKey];
+    [defaults setObject:self.divingType forKey:kdivingTypeKey];
     [defaults synchronize];
     
 }

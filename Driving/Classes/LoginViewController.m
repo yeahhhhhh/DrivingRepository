@@ -37,6 +37,8 @@
     // 2.1把用户名和密码保存到accont中
     [Accont shareAccount].loginUser = self.userField.text;
     [Accont shareAccount].loginPwd = self.passwordField.text;
+    [Accont shareAccount].divingType = self.typeString;
+    
     //设置标示
     [XMPPTool sharedXMPPTool].registerOperation = NO;
     
