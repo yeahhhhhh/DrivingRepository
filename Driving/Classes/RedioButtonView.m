@@ -76,7 +76,8 @@
         self.rb3.hidden = YES;//隐藏
         self.rb4.hidden =YES;
     }
-    
+
+//    NSLog(@"%@",self.datasFrame.datas.explains);
     
 }
 - (instancetype)initWithFrame:(CGRect)frame
@@ -143,6 +144,9 @@
 }
 //代理方法
 -(void)radioButtonSelectedAtIndex:(NSUInteger)index inGroup:(NSString *)groupId{
-    NSLog(@"changed to %lu in %@",(unsigned long)index,groupId);
+//    NSLog(@"changed to %lu in %@",(unsigned long)index,groupId);
+
+//     NSLog(@"%@",self.label1.text);
+
 }
 @end

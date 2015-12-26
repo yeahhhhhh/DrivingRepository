@@ -70,6 +70,15 @@
     
     self.itemViewF = (CGRect){{itemViewX,itemViewY},itemViewSize};
     
-    self.cellhightF = CGRectGetMaxY(self.itemViewF) + HXCellBorderW;
+    /** 答案*/
+    /** 问题*/
+    CGFloat answerLableX = HXCellBorderW;
+    CGFloat answerLableY = CGRectGetMaxY(self.itemViewF) + HXCellBorderW;
+//    CGFloat maxW = [UIScreen mainScreen].bounds.size.width - 3 * HXCellBorderW;
+    NSString *answerString = [NSString stringWithFormat:@"答案为选项%@,解析：%@",datas.answer,datas.explains];
+    CGSize  answerLableSize = [answerString sizeWithfont:HXquestionFont maxW:maxW];
+    self.answerLableF = (CGRect){{answerLableX,answerLableY},answerLableSize};
+    
+    self.cellhightF = CGRectGetMaxY(self.answerLableF) + HXCellBorderW;
 }
 @end

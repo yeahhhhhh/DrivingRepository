@@ -15,6 +15,8 @@
 		273A1ADA1C0AD91B0007CC48 /* addFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273A1AD91C0AD91B0007CC48 /* addFriendViewController.m */; settings = {ASSET_TAGS = (); }; };
 		273A1AE01C0ADF780007CC48 /* messagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273A1ADF1C0ADF780007CC48 /* messagesTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		275E5A3E1C268BD900871F35 /* DrivingType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 275E5A3D1C268BD900871F35 /* DrivingType.plist */; settings = {ASSET_TAGS = (); }; };
+		27766A611C2EA975000C76E4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27766A601C2EA975000C76E4 /* FirstViewController.m */; settings = {ASSET_TAGS = (); }; };
+		27766A641C2EB623000C76E4 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 27766A631C2EB623000C76E4 /* UIBarButtonItem+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		278B88EA1C15B56C0072B542 /* PracticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278B88E91C15B56C0072B542 /* PracticeTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		27AA66141C004C5600ABD837 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA65E41C004C5600ABD837 /* AFHTTPRequestOperation.m */; settings = {ASSET_TAGS = (); }; };
 		27AA66151C004C5600ABD837 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA65E61C004C5600ABD837 /* AFHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -254,6 +256,10 @@
 		273A1ADE1C0ADF780007CC48 /* messagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messagesTableViewController.h; sourceTree = "<group>"; };
 		273A1ADF1C0ADF780007CC48 /* messagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messagesTableViewController.m; sourceTree = "<group>"; };
 		275E5A3D1C268BD900871F35 /* DrivingType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrivingType.plist; sourceTree = "<group>"; };
+		27766A5F1C2EA975000C76E4 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		27766A601C2EA975000C76E4 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		27766A621C2EB623000C76E4 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		27766A631C2EB623000C76E4 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		278B88E81C15B56C0072B542 /* PracticeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeTableViewController.h; sourceTree = "<group>"; };
 		278B88E91C15B56C0072B542 /* PracticeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeTableViewController.m; sourceTree = "<group>"; };
 		27AA65E31C004C5600ABD837 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -1767,6 +1773,8 @@
 				27AA68671C0053C600ABD837 /* RegisterViewController.m */,
 				27AA68611C00512500ABD837 /* Login.storyboard */,
 				275E5A3D1C268BD900871F35 /* DrivingType.plist */,
+				27766A5F1C2EA975000C76E4 /* FirstViewController.h */,
+				27766A601C2EA975000C76E4 /* FirstViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1894,6 +1902,8 @@
 		27C969451BE26FC800797F3C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				27766A621C2EB623000C76E4 /* UIBarButtonItem+Extension.h */,
+				27766A631C2EB623000C76E4 /* UIBarButtonItem+Extension.m */,
 				27C969461BE2701200797F3C /* Foundation+Log.m */,
 			);
 			name = Category;
@@ -2100,6 +2110,7 @@
 				27AA68511C004FEB00ABD837 /* XMPPPing.m in Sources */,
 				27AA680E1C004FEB00ABD837 /* XMPPIQ+JabberRPCResonse.m in Sources */,
 				27AA68441C004FEB00ABD837 /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
+				27766A611C2EA975000C76E4 /* FirstViewController.m in Sources */,
 				27AA68301C004FEB00ABD837 /* XMPPIQ+XEP_0060.m in Sources */,
 				278B88EA1C15B56C0072B542 /* PracticeTableViewController.m in Sources */,
 				27AA67FF1C004FEB00ABD837 /* XMPPOutgoingFileTransfer.m in Sources */,
@@ -2220,6 +2231,7 @@
 				27AA66DF1C004F6400ABD837 /* XMPPParser.m in Sources */,
 				27AA68561C004FEB00ABD837 /* XMPPAttentionModule.m in Sources */,
 				271217781BE388A600506E0E /* ZYRadioButton.m in Sources */,
+				27766A641C2EB623000C76E4 /* UIBarButtonItem+Extension.m in Sources */,
 				27AA67FE1C004FEB00ABD837 /* XMPPIncomingFileTransfer.m in Sources */,
 				27AA66D91C004F6400ABD837 /* XMPPConstants.m in Sources */,
 				27AA685B1C004FEB00ABD837 /* XMPPMessage+XEP_0308.m in Sources */,

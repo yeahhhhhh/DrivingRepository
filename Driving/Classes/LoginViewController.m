@@ -12,6 +12,7 @@
 #import "XMPPTool.h"
 #import "drivingViewController.h"
 #import "RegisterViewController.h"
+#import "UIBarButtonItem+Extension.h"
 @interface LoginViewController ()<UIPickerViewDataSource , UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet  UITextField *userField;
@@ -30,6 +31,11 @@
     if (self.userField.text.length == 0 || self.passwordField.text.length == 0) {
         
         [MBProgressHUD showError:@"请求输入用户名和密码"];
+        return;
+    }
+    if (self.typeString == Nil) {
+        
+        [MBProgressHUD showError:@"请选择驾驶证类型"];
         return;
     }
     [MBProgressHUD showMessage:@"正在登录"];
@@ -95,38 +101,42 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemwithTarget:self action:@selector(back) image:@"navigationbar_back" Highimage:@"navigationbar_back_highlighted"];
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:100/255.0 green:130/255.0 blue:150/255.0 alpha:1.0];
+    self.navigationController.navigationBarHidden = NO;//设置导航栏为可见
+    
     UIColor *color = [UIColor colorWithRed:255.0/255 green:153.0/255 blue:153.0/255 alpha:1.0];
     // 登陆按钮
     UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     loginBtn.backgroundColor = [UIColor whiteColor];
     [loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
     [loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    loginBtn.frame = CGRectMake(50,319, 208, 30);
+    loginBtn.frame = CGRectMake(50,419, 208, 30);
     [loginBtn.layer setMasksToBounds:YES];
     [loginBtn.layer setCornerRadius:10.0]; //设置矩形四个圆角半径
     [loginBtn.layer setBorderWidth:1.0];   //边框宽度
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGColorRef colorref = CGColorCreate(colorSpace,(CGFloat[]){ 255.0/255, 153.0/255, 153.0/255, 1 });
     [loginBtn.layer setBorderColor:colorref];//边框颜色
-   
     loginBtn.backgroundColor = color;
+    [self.view addSubview:loginBtn];
+    [loginBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
     // 注册按钮
     
-    UIButton *RegisteredBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    RegisteredBtn.backgroundColor = [UIColor whiteColor];
-    [RegisteredBtn setTitle:@"注册" forState:UIControlStateNormal];
-    [RegisteredBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    RegisteredBtn.frame = CGRectMake(50,375, 208, 30);
-    [RegisteredBtn.layer setMasksToBounds:YES];
-    [RegisteredBtn.layer setCornerRadius:10.0]; //设置矩形四个圆角半径
-    [RegisteredBtn.layer setBorderWidth:1.0];   //边框宽度
-    [RegisteredBtn.layer setBorderColor:colorref];//边框颜色
-    RegisteredBtn.backgroundColor = color;
-    
-    [self.view addSubview:loginBtn];
-    [self.view addSubview:RegisteredBtn];
-    [loginBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-    [RegisteredBtn addTarget:self action:@selector(RegisteredAction) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton *RegisteredBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    RegisteredBtn.backgroundColor = [UIColor whiteColor];
+//    [RegisteredBtn setTitle:@"注册" forState:UIControlStateNormal];
+//    [RegisteredBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    RegisteredBtn.frame = CGRectMake(50,375, 208, 30);
+//    [RegisteredBtn.layer setMasksToBounds:YES];
+//    [RegisteredBtn.layer setCornerRadius:10.0]; //设置矩形四个圆角半径
+//    [RegisteredBtn.layer setBorderWidth:1.0];   //边框宽度
+//    [RegisteredBtn.layer setBorderColor:colorref];//边框颜色
+//    RegisteredBtn.backgroundColor = color;
+//    [self.view addSubview:RegisteredBtn];
+//    [RegisteredBtn addTarget:self action:@selector(RegisteredAction) forControlEvents:UIControlEventTouchUpInside];
     
     /**
      *  加载驾驶证类型数据
@@ -138,10 +148,16 @@
     self.pickerView.dataSource = self;
     self.pickerView.delegate = self;
 }
-- (void) RegisteredAction
+
+- (void)back
 {
-    [self.navigationController pushViewController:[[RegisterViewController alloc]init] animated:YES];
+    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
+//- (void) RegisteredAction
+//{
+//    [self.navigationController pushViewController:[[RegisterViewController alloc]init] animated:YES];
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -161,17 +177,47 @@
 #pragma mark - 选择器中某个拨轮的行数
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 6;
+    return 7;
 }
 #pragma mark - 为选择器中某个行提供数据
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+    
     return [_array objectAtIndex:row];
 }
+
 #pragma mark - 选择器选中某个拨轮中的某行时调用
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    _typeString = [_array objectAtIndex:row];
+     NSLog(@"%ld",(long)row);
+    
+    
+    if (row == 0) {
+        _typeString = Nil;
+    
+    }else{
+        _typeString = [_array objectAtIndex:row];
+        //截取"("前面的字符串
+        NSRange range = [_typeString rangeOfString:@"("];
+        _typeString = [_typeString substringToIndex:range.location];
+        
+    }
     NSLog(@"%@",_typeString);
+}
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    
+    UILabel* pickerLabel = (UILabel*)view;
+    if (!pickerLabel){
+        pickerLabel = [[UILabel alloc] init];
+        
+//        pickerLabel.minimumFontSize = 8.;
+        pickerLabel.adjustsFontSizeToFitWidth = YES;
+        [pickerLabel setTextAlignment:UITextAlignmentCenter];
+//        [pickerLabel setBackgroundColor:[UIColor clearColor]];
+        [pickerLabel setFont:[UIFont boldSystemFontOfSize:15]];
+    }
+    // Fill the label text here
+    pickerLabel.text=[self pickerView:pickerView titleForRow:row forComponent:component];
+    return pickerLabel;
 }
 @end

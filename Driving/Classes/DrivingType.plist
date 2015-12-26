@@ -2,11 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>a1</string>
-	<string>a2</string>
-	<string>b1</string>
-	<string>b2</string>
-	<string>c1</string>
-	<string>c2</string>
+	<string>请选择驾照类型</string>
+	<string>A1(大型客车)</string>
+	<string>A2(牵引车)</string>
+	<string>B1(中型客车)</string>
+	<string>B2(大型货车)</string>
+	<string>C1(小型汽车)</string>
+	<string>C2(小型自动挡汽车)</string>
 </array>
 </plist>

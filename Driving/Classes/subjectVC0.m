@@ -13,6 +13,7 @@
 #import "SubjectOneFrame.h"
 #import "MBProgressHUD+MJ.h"
 #import "Accont.h"
+#import "RedioButtonView.h"
 @interface subjectVC0 ()
 @property (nonatomic, strong) NSMutableArray *frameArray;//里面存放的SubjectOneFrame(模型)＋ 数据 每一个SubjectOneFrame(微博模型)代表一个问题
 
@@ -52,6 +53,23 @@
 #pragma mark  - 加载科目题目数据
 - (void) loadNewQuestion
 {
+//    // 1.请求管理者
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    //    mgr.responseSerializer = [AFJSONResponseSerializer serializer];
+//    
+//    
+//    
+//    
+//    // 3.发送请求
+//    [mgr GET:@"http://localhost:8080/ErHuo/getWantList.action" parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary * responseObject)
+//     {
+//         NSLog(@"发送请求%@",responseObject);
+//         
+//     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
+//     {
+//         NSLog(@"请求失败-%@", error);
+//         
+//     }];
     
     // 1.请求管理者
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
@@ -74,7 +92,7 @@
     [mgr GET:@"http://api2.juheapi.com/jztk/query" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary * responseObject)
      {
 
-         NSLog(@"请求成功-%@", responseObject);
+//         NSLog(@"请求成功-%@", responseObject);
          
          /**
           *  将json转换为plist文件
@@ -140,8 +158,9 @@
     
     SubjectOneCell *cell = [SubjectOneCell cellwithTableView:tableView];
 //    self.subjectOneFrame.datas = self.array[indexPath.row];
+    RedioButtonView *rb = [[RedioButtonView alloc]init];
+    rb.indexs = (int)indexPath.row;
     cell.subjectOneFrame = self.frameArray[indexPath.row];
-    
     return cell;
 }
 
@@ -151,55 +170,11 @@
     return frame.cellhightF;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    //获得cell
-//    SubjectOneCell *cell = [SubjectOneCell cellwithTableView:tableView];
-//    cell.datas = self.array[indexPath.row];
-//}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%ld",(long)indexPath.row);
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

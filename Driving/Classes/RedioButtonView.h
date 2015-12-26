@@ -12,4 +12,5 @@
 #import "SubjectOneFrame.h"
 @interface RedioButtonView : UIView<RadioButtonDelegate>
 @property (nonatomic, strong) SubjectOneFrame * datasFrame;
+@property (nonatomic , assign) int indexs;//是第几个cell
 @end

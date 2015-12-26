@@ -10,6 +10,8 @@
 #import "MBProgressHUD+MJ.h"
 #import "Accont.h"
 #import "XMPPTool.h"
+#import "UIBarButtonItem+Extension.h"
+#import "LoginViewController.h"
 @interface RegisterViewController ()
 @property (weak, nonatomic)  UITextField *userField;
 @property (weak, nonatomic)  UITextField *pwdField;
@@ -60,6 +62,7 @@
             
             [MBProgressHUD showSuccess:@"恭喜注册成功..."];
             [self.navigationController popToRootViewControllerAnimated:YES];
+            self.navigationController.navigationBarHidden = YES;
             
         }else{
             [MBProgressHUD showError:@"用户名重复"];
@@ -69,6 +72,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemwithTarget:self action:@selector(back) image:@"navigationbar_back" Highimage:@"navigationbar_back_highlighted"];
+    
     // Do any additional setup after loading the view.
     
     UITextField *userField = [[UITextField alloc]initWithFrame:CGRectMake(89, 155, 186, 30)];
@@ -109,7 +115,12 @@
     [self.view addSubview:RegisteredBtn];
     self.navigationItem.title = @"注册";
 }
-
+- (void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
+//    self.tabBarController.tabBar.hidden = NO;
+    self.navigationController.navigationBarHidden = YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

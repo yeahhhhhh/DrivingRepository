@@ -107,7 +107,7 @@ static NSMutableDictionary *rb_observers=nil;
     if (rb_observers) {
         //获得观察者对象
         id observer= [rb_observers objectForKey:radioButton.groupId];
-        
+        NSLog(@"通知观察者 %@",radioButton.groupId);
         //判断该类中是否存在radioButtonSelectedAtIndex:inGroup: 这个方法
         if(observer && [observer respondsToSelector:@selector(radioButtonSelectedAtIndex:inGroup:)]){
             //调用观察者的代理的方法

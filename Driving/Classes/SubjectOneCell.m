@@ -20,6 +20,8 @@
 @property (nonatomic, weak) RedioButtonView * itemView;
 /** 图片*/
 @property (nonatomic, weak) UIImageView * urlView;
+/**答案*/
+@property (nonatomic, weak) UILabel* answerLable;
 @end
 
 @implementation SubjectOneCell
@@ -66,7 +68,12 @@
     
     
     self.itemView.datasFrame = subjectOneFrame;
+    
     self.itemView.frame = subjectOneFrame.itemViewF;
+    
+    self.answerLable.frame = subjectOneFrame.answerLableF;
+    NSString *answerString = [NSString stringWithFormat:@"答案为选项%@,解析：%@",datas.answer,datas.explains];
+    self.answerLable.text = answerString;
     
     
 }
@@ -85,6 +92,13 @@
     RedioButtonView * itemView = [[RedioButtonView alloc]init];
     [self.contentView addSubview:itemView];
     self.itemView = itemView;
+    
+    UILabel * answerLable = [[UILabel alloc]init];
+    answerLable.backgroundColor = [UIColor colorWithRed:236/255.0 green:236/255.0 blue:236/255.0 alpha:1.0];
+    [self.contentView addSubview:answerLable];
+    answerLable.font = HXquestionFont;
+    answerLable.numberOfLines = 0;
+    self.answerLable = answerLable;
 }
 
 @end
