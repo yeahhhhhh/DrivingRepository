@@ -129,7 +129,7 @@
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         }
-        cell.textLabel.text = [NSString stringWithFormat:@"科目%ld", indexPath.row + 1];
+        cell.textLabel.text = [NSString stringWithFormat:@"数据%ld", indexPath.row + 1];
         return cell;
     }
     
@@ -160,10 +160,11 @@
 #pragma mark - 设置间隔高度
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    if (section == 2) {
-        return 15;
-    }
-    return 15;
+//    if (section == 2) {
+//        return 15;
+//    }
+//    return 15;
+    return 5;
 }
 
 #pragma mark - UIScrollViewDelegate

@@ -129,7 +129,7 @@ singleton_implementation(XMPPTool)
     }
     _xmppStream.myJID = myjid;
     // 2.设置主机地址
-    _xmppStream.hostName = @"127.0.0.1";//127.0.0.1
+    _xmppStream.hostName = @"120.34.52.18";//127.0.0.1
     // 3.设置主机端口号
     _xmppStream.hostPort =  5222;
     // 4.发起连接

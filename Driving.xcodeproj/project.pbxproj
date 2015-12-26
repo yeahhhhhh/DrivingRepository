@@ -17,6 +17,9 @@
 		275E5A3E1C268BD900871F35 /* DrivingType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 275E5A3D1C268BD900871F35 /* DrivingType.plist */; settings = {ASSET_TAGS = (); }; };
 		27766A611C2EA975000C76E4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27766A601C2EA975000C76E4 /* FirstViewController.m */; settings = {ASSET_TAGS = (); }; };
 		27766A641C2EB623000C76E4 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 27766A631C2EB623000C76E4 /* UIBarButtonItem+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		27766A671C2EFC3D000C76E4 /* YXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27766A661C2EFC3D000C76E4 /* YXTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		27766A6A1C2EFCAB000C76E4 /* SXTitleLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 27766A691C2EFCAB000C76E4 /* SXTitleLable.m */; settings = {ASSET_TAGS = (); }; };
+		27766A6D1C2EFD77000C76E4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27766A6C1C2EFD77000C76E4 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		278B88EA1C15B56C0072B542 /* PracticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278B88E91C15B56C0072B542 /* PracticeTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		27AA66141C004C5600ABD837 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA65E41C004C5600ABD837 /* AFHTTPRequestOperation.m */; settings = {ASSET_TAGS = (); }; };
 		27AA66151C004C5600ABD837 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA65E61C004C5600ABD837 /* AFHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -260,6 +263,12 @@
 		27766A601C2EA975000C76E4 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		27766A621C2EB623000C76E4 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		27766A631C2EB623000C76E4 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		27766A651C2EFC3D000C76E4 /* YXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXTableViewController.h; sourceTree = "<group>"; };
+		27766A661C2EFC3D000C76E4 /* YXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXTableViewController.m; sourceTree = "<group>"; };
+		27766A681C2EFCAB000C76E4 /* SXTitleLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXTitleLable.h; sourceTree = "<group>"; };
+		27766A691C2EFCAB000C76E4 /* SXTitleLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXTitleLable.m; sourceTree = "<group>"; };
+		27766A6B1C2EFD77000C76E4 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		27766A6C1C2EFD77000C76E4 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		278B88E81C15B56C0072B542 /* PracticeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeTableViewController.h; sourceTree = "<group>"; };
 		278B88E91C15B56C0072B542 /* PracticeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeTableViewController.m; sourceTree = "<group>"; };
 		27AA65E31C004C5600ABD837 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -743,10 +752,16 @@
 		279C03EA1C0ED1A700E9AEC4 /* Controllor */ = {
 			isa = PBXGroup;
 			children = (
+				27766A681C2EFCAB000C76E4 /* SXTitleLable.h */,
+				27766A691C2EFCAB000C76E4 /* SXTitleLable.m */,
+				27766A651C2EFC3D000C76E4 /* YXTableViewController.h */,
+				27766A661C2EFC3D000C76E4 /* YXTableViewController.m */,
 				278B88E81C15B56C0072B542 /* PracticeTableViewController.h */,
 				278B88E91C15B56C0072B542 /* PracticeTableViewController.m */,
 				27E1DC561B5BB36C004387D0 /* HomeTableViewController.h */,
 				27E1DC571B5BB36C004387D0 /* HomeTableViewController.m */,
+				27766A6B1C2EFD77000C76E4 /* HomeViewController.h */,
+				27766A6C1C2EFD77000C76E4 /* HomeViewController.m */,
 			);
 			name = Controllor;
 			sourceTree = "<group>";
@@ -2099,6 +2114,7 @@
 				27AA683F1C004FEB00ABD837 /* XMPPCapsResourceCoreDataStorageObject.m in Sources */,
 				27AA681D1C004FEB00ABD837 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				27AA66DB1C004F6400ABD837 /* XMPPIQ.m in Sources */,
+				27766A6D1C2EFD77000C76E4 /* HomeViewController.m in Sources */,
 				27AA66F41C004F7100ABD837 /* XMPPIDTracker.m in Sources */,
 				27AA66E01C004F6400ABD837 /* XMPPPresence.m in Sources */,
 				27AA684D1C004FEB00ABD837 /* XMPPStreamManagementMemoryStorage.m in Sources */,
@@ -2242,6 +2258,7 @@
 				27AA66E11C004F6400ABD837 /* XMPPStream.m in Sources */,
 				27AA66211C004C5600ABD837 /* MJExtensionConst.m in Sources */,
 				27AA68041C004FEB00ABD837 /* XMPPResourceCoreDataStorageObject.m in Sources */,
+				27766A671C2EFC3D000C76E4 /* YXTableViewController.m in Sources */,
 				27AA68191C004FEB00ABD837 /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
 				27AA66DC1C004F6400ABD837 /* XMPPJID.m in Sources */,
 				27AA683A1C004FEB00ABD837 /* XMPPTransports.m in Sources */,
@@ -2282,6 +2299,7 @@
 				27AA66201C004C5600ABD837 /* MJDictionaryCache.m in Sources */,
 				27AA66251C004C5600ABD837 /* MJPropertyType.m in Sources */,
 				27AA66B91C004F5600ABD837 /* XMPPDeprecatedDigestAuthentication.m in Sources */,
+				27766A6A1C2EFCAB000C76E4 /* SXTitleLable.m in Sources */,
 				27AA661A1C004C5600ABD837 /* AFURLRequestSerialization.m in Sources */,
 				27AA680B1C004FEB00ABD837 /* XMPPRoster.m in Sources */,
 				27AA68451C004FEB00ABD837 /* XMPPMessageArchiving.m in Sources */,

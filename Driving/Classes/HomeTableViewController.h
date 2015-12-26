@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "StripTableViewCell.h"
 @interface HomeTableViewController : UITableViewController<UITableViewDataSource , PracticeCellDelegate>
-
+@property (nonatomic,assign) NSInteger index;
 @end

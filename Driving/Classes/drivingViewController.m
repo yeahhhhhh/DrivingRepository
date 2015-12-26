@@ -11,6 +11,7 @@
 #import "MessageTableViewController.h"
 #import "ExamTableViewController.h"
 #import "myTableViewController.h"
+#import "HomeViewController.h"
 @interface drivingViewController ()
 
 @end
@@ -20,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    HomeTableViewController *home = [[HomeTableViewController alloc]init];
+    HomeViewController *home = [[HomeViewController alloc]init];
     [self addchildVC:home title:@"驾校" image:@"tabbar_home" selectImage:@"tabbar_home_selected"];
     
     ExamTableViewController *discover = [[ExamTableViewController alloc]init];
