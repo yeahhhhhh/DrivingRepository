@@ -41,10 +41,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadNewQuestion];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(back)];
+    self.navigationItem.title =  [NSString stringWithFormat:@"%@练习",self.string] ;
     [MBProgressHUD showMessage:@" 正在玩命加载..."];
     self.tableView.tableFooterView = [[UIView alloc]init];
+    self.tabBarController.tabBar.hidden = YES;
 }
-
+- (void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    self.tabBarController.tabBar.hidden = NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -86,7 +93,8 @@
     params[@"subject"] = @1;
     params[@"model"] = [Accont shareAccount].divingType;
     NSLog(@"%@",[Accont shareAccount].divingType);
-    params[@"testType"] = @"rand";
+    params[@"testType"] = self.testType;
+    NSLog(@"%@",self.testType);
 
     // 3.发送请求
     [mgr GET:@"http://api2.juheapi.com/jztk/query" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary * responseObject)
@@ -175,6 +183,8 @@
     NSLog(@"%ld",(long)indexPath.row);
 }
 
-
+-(void)dealloc{
+    NSLog(@"%s",__func__);
+}
 
 @end

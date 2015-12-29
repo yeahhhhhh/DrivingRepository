@@ -25,7 +25,7 @@
     [self addchildVC:home title:@"驾校" image:@"tabbar_home" selectImage:@"tabbar_home_selected"];
     
     ExamTableViewController *discover = [[ExamTableViewController alloc]init];
-    [self addchildVC:discover title:@"考试" image:@"tabbar_discover" selectImage:@"tabbar_discover_selected"];
+    [self addchildVC:discover title:@"发现" image:@"tabbar_discover" selectImage:@"tabbar_discover_selected"];
     
     myTableViewController *myTable = [[myTableViewController alloc]init];
     [self addchildVC:myTable title:@"消息" image:@"tabbar_message_center" selectImage:@"tabbar_message_center_selected"];

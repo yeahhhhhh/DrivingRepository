@@ -2,8 +2,8 @@
 //  YXTableViewController.m
 //  YXRollView
 //
-//  Created by 风中的少年 on 15/9/8.
-//  Copyright (c) 2015年 风中的少年. All rights reserved.
+//  Created by 黄欣 on 15/12/27.
+//  Copyright © 2015年 黄欣. All rights reserved.
 //
 
 #import "YXTableViewController.h"
@@ -44,5 +44,7 @@
     
     return cell;
 }
-
+-(void)dealloc{
+    NSLog(@"%s",__func__);
+}
 @end

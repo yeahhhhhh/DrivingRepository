@@ -79,7 +79,7 @@
     
     UITextField *userField = [[UITextField alloc]initWithFrame:CGRectMake(89, 155, 186, 30)];
     UITextField *pwdField  = [[UITextField alloc]initWithFrame:CGRectMake(89, 200, 186, 30)];
-    
+    pwdField.secureTextEntry = YES;
     self.userField = userField;
     self.pwdField  = pwdField;
     
@@ -139,5 +139,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)dealloc{
+    NSLog(@"%s",__func__);
+}
 @end

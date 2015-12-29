@@ -14,40 +14,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdp-9v-a12">
-                        <rect key="frame" x="106" y="11" width="20" height="22"/>
-                        <animations/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" image="password">
-                            <attributedString key="attributedTitle">
-                                <fragment content="顺序练习">
-                                    <attributes>
-                                        <font key="NSFont" size="1" name=".PingFangSC-Regular"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                        </state>
-                        <connections>
-                            <action selector="touch:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="85Z-dK-L08"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="顺序练习" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ee8-0C-45S">
-                        <rect key="frame" x="90" y="34" width="52" height="21"/>
+                        <rect key="frame" x="92" y="34" width="52" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvG-gY-M4M">
-                        <rect key="frame" x="196" y="11" width="20" height="22"/>
+                        <rect key="frame" x="187" y="0.0" width="36" height="36"/>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" image="password">
+                        <state key="normal" image="picture1">
                             <attributedString key="attributedTitle">
-                                <fragment content="随机练习">
+                                <fragment content="随机">
                                     <attributes>
-                                        <font key="NSFont" size="1" name=".PingFangSC-Regular"/>
+                                        <font key="NSFont" size="1" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                     </attributes>
                                 </fragment>
@@ -58,21 +40,21 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="随机练习" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMx-ZH-7kP">
-                        <rect key="frame" x="180" y="34" width="52" height="19"/>
+                        <rect key="frame" x="179" y="34" width="52" height="19"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pyd-RK-IQU">
-                        <rect key="frame" x="267" y="11" width="20" height="22"/>
+                        <rect key="frame" x="258" y="0.0" width="36" height="36"/>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" image="password">
+                        <state key="normal" image="picture1">
                             <attributedString key="attributedTitle">
-                                <fragment content="专项练习">
+                                <fragment content="专项">
                                     <attributes>
-                                        <font key="NSFont" size="1" name=".PingFangSC-Regular"/>
+                                        <font key="NSFont" size="1" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                     </attributes>
                                 </fragment>
@@ -83,27 +65,27 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="专项练习" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWs-ZA-Lo9">
-                        <rect key="frame" x="251" y="34" width="52" height="21"/>
+                        <rect key="frame" x="250" y="34" width="52" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="章节练习" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSP-mz-Pr2">
-                        <rect key="frame" x="15" y="34" width="52" height="21"/>
+                        <rect key="frame" x="17" y="34" width="52" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q4s-dh-fty">
-                        <rect key="frame" x="31" y="11" width="20" height="22"/>
+                        <rect key="frame" x="25" y="0.0" width="36" height="36"/>
                         <animations/>
-                        <state key="normal" image="password">
+                        <state key="normal" image="picture1">
                             <attributedString key="attributedTitle">
-                                <fragment content="章节练习">
+                                <fragment content="章节">
                                     <attributes>
-                                        <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                        <font key="NSFont" size="1" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -111,6 +93,24 @@
                         </state>
                         <connections>
                             <action selector="touch:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ne7-15-nJH"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdp-9v-a12">
+                        <rect key="frame" x="100" y="0.0" width="36" height="36"/>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" image="picture1">
+                            <attributedString key="attributedTitle">
+                                <fragment content="顺序">
+                                    <attributes>
+                                        <font key="NSFont" size="1" name="STHeitiSC-Light"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </state>
+                        <connections>
+                            <action selector="touch:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="85Z-dK-L08"/>
                         </connections>
                     </button>
                 </subviews>
@@ -123,6 +123,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="password" width="41" height="45"/>
+        <image name="picture1" width="74" height="68"/>
     </resources>
 </document>

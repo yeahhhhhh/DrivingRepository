@@ -10,6 +10,7 @@
 #import "YXTableViewController.h"
 #import "SXTitleLable.h"
 #import "HomeTableViewController.h"
+#import "nabenTableViewController.h"
 @interface HomeViewController ()<UIScrollViewDelegate>
 /// 标签的滚动label
 @property (nonatomic,strong)  UIScrollView *smallScview;
@@ -23,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:61/255.0 green:201/255.0 blue:106/255.0 alpha:1.0];//设置导航栏颜色
     
     UIScrollView *smallScview = [[UIScrollView alloc]initWithFrame:CGRectMake(0,60 , self.view.bounds.size.width, 35)];
     UIScrollView *bigScview = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 95, self.view.bounds.size.width, self.view.bounds.size.height - 95)];
@@ -63,16 +64,15 @@
 /** 添加子控制器 */
 - (void)addController
 {
-    YXTableViewController *vc1 = [[YXTableViewController alloc]init];
-    vc1.title = @"报名";
-    [self addChildViewController:vc1];
+//    YXTableViewController *vc1 = [[YXTableViewController alloc]init];
+//    vc1.title = @"报名";
+//    [self addChildViewController:vc1];
     HomeTableViewController *vc2 = [[HomeTableViewController alloc]init];
     vc2.title = @"科一";
     [self addChildViewController:vc2];
     
     YXTableViewController *vc3 = [[YXTableViewController alloc]init];
     vc3.title = @"科二";
-    vc3.view.backgroundColor = [UIColor orangeColor];
     [self addChildViewController:vc3];
     
     YXTableViewController *vc4 = [[YXTableViewController alloc]init];
@@ -82,7 +82,8 @@
     YXTableViewController *vc5 = [[YXTableViewController alloc]init];
     vc5.title = @"科四";
     [self addChildViewController:vc5];
-    YXTableViewController *vc6 = [[YXTableViewController alloc]init];
+    
+    nabenTableViewController *vc6 = [[nabenTableViewController alloc]init];
     vc6.title = @"拿本";
     [self addChildViewController:vc6];
 }
@@ -91,15 +92,14 @@
 - (void)addLable
 {
     ///这里可以修改标签的个数
-    for (int i = 0; i < 6; i++) {
-        CGFloat lblW = self.view.frame.size.width/3;
+    for (int i = 0; i < 5; i++) {
+        CGFloat lblW = self.view.frame.size.width/4;
         CGFloat lblH = 40;
         CGFloat lblY = 0;
         CGFloat lblX = i * lblW;
         SXTitleLable *lbl1 = [[SXTitleLable alloc]init];
         UIViewController *vc = self.childViewControllers[i];
         lbl1.text =vc.title;
-        NSLog(@"%@",vc.title);
         lbl1.frame = CGRectMake(lblX, lblY, lblW, lblH);
         lbl1.font = [UIFont systemFontOfSize:19];
         [self.smallScview addSubview:lbl1];
@@ -121,7 +121,7 @@
     
     CGFloat offsetY = self.bigScview.contentOffset.y;
     CGPoint offset = CGPointMake(offsetX, offsetY);
-    
+    NSLog(@"dianji ");
     [self.bigScview setContentOffset:offset animated:YES];
 }
 
@@ -177,6 +177,7 @@
 /** 正在滚动 */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    
     // 取出绝对值 避免最左边往右拉时形变超过1
     CGFloat value = ABS(scrollView.contentOffset.x / scrollView.frame.size.width);
     NSUInteger leftIndex = (int)value;
@@ -195,16 +196,7 @@
 
 
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)dealloc{
+    NSLog(@"%s",__func__);
 }
-*/
-
 @end

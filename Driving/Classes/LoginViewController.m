@@ -104,7 +104,7 @@
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemwithTarget:self action:@selector(back) image:@"navigationbar_back" Highimage:@"navigationbar_back_highlighted"];
     
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:100/255.0 green:130/255.0 blue:150/255.0 alpha:1.0];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:61/255.0 green:201/255.0 blue:106/255.0 alpha:1.0];//设置导航栏颜色
     self.navigationController.navigationBarHidden = NO;//设置导航栏为可见
     
     UIColor *color = [UIColor colorWithRed:255.0/255 green:153.0/255 blue:153.0/255 alpha:1.0];

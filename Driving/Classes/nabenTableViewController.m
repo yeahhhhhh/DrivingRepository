@@ -1,35 +1,35 @@
 //
-//  HomeTableViewController.m
+//  nabenTableViewController.m
 //  Driving
 //
-//  Created by 黄欣 on 15/7/19.
-//  Copyright (c) 2015年 黄欣. All rights reserved.
+//  Created by 黄欣 on 15/12/27.
+//  Copyright © 2015年 黄欣. All rights reserved.
 //
 
-#import "HomeTableViewController.h"
-#import "subjectVC0.h"
-#import "subjectVC1.h"
+#import "nabenTableViewController.h"
 #import "UIView+Extension.h"
-//#import "StripTableViewCell.h"
-#import "PracticeTableViewController.h"
  static long step = 0; //记录时钟动画调用次数
-@interface HomeTableViewController ()<UIScrollViewDelegate>
+@interface nabenTableViewController ()<UIScrollViewDelegate>
 {
     CADisplayLink   *_timer;            //定时器
     BOOL _isDraging; //当前是否正在拖拽
 }
+
 @property (nonatomic , strong)UIScrollView *scrollView;
 @property (nonatomic, weak) UIPageControl *pageControl;
-//@property (nonatomic , strong)id  cell;
+
 @end
 
-@implementation HomeTableViewController
+@implementation nabenTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];                  
-    self.tableView.tableFooterView = [[UIView alloc]init]; //删除多余空cell
+    [super viewDidLoad];
     
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,12 +40,12 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    return 3;
+#warning Incomplete implementation, return the number of sections
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+#warning Incomplete implementation, return the number of rows
     if (section == 0) {
         return 1;
     }else if (section == 1)
@@ -55,11 +55,8 @@
     return 2;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
 
-//    UITableViewCell * cell;
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *ID = @"identifier";
     if (indexPath.section == 0) {
         
@@ -79,16 +76,17 @@
             imageview.size = scrollView.size;
             imageview.y = 0;
             imageview.x = i * imageview.width;
-            NSString *name = [NSString stringWithFormat:@"text%d",i];
+            NSString *name = [NSString stringWithFormat:@"p%d",i+1];
+//            NSString *name = @"p3";
             imageview.image = [UIImage imageNamed:name];
             
             [scrollView addSubview:imageview];
-            }
+        }
         scrollView.delegate = self;
         scrollView.bounces = NO;//关闭弹簧效果
         scrollView.pagingEnabled = YES;//分页效果
         scrollView.showsHorizontalScrollIndicator = NO;//关闭滚动条
-    
+        
         
         UIPageControl *pageControl = [[UIPageControl alloc]init];
         pageControl.numberOfPages = 3;
@@ -98,7 +96,7 @@
         //pageControl.userInteractionEnabled = NO;//
         pageControl.centerX = 290;
         pageControl.centerY = 80;
-//        pageControl.width = 100;
+        //        pageControl.width = 100;
         //    pageControl.height = 60; //可以不设置他的宽高
         
         [self.view addSubview:pageControl];
@@ -109,24 +107,9 @@
         [_timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
         return cell;
         
-    }
-    if (indexPath.section == 1)
-    {
-        NSLog(@"bbbbbbbbb");
-        StripTableViewCell *cell1 = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        
-        if (!cell1)
-        {
-            [tableView registerNib:[UINib nibWithNibName:@"StripTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
-            cell1 = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-            cell1.delegate = self;
-        }
-        return cell1;
-        
-    }
-    else{
+    }else{
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-      
+        
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         }
@@ -135,17 +118,6 @@
     }
     
     return nil;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    NSLog(@"%ld,%ld",(long)indexPath.section,(long)indexPath.row);
-    if (indexPath.section == 2) {
-        NSString *demoClassString = [NSString stringWithFormat:@"subjectVC%ld", indexPath.row];
-        
-        [self.navigationController pushViewController:[NSClassFromString(demoClassString) new] animated:YES];
-    }
-    
 }
 #pragma mark - 设置cell高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -158,20 +130,10 @@
     }
     return 44;
 }
-#pragma mark - 设置间隔高度
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
-//    if (section == 2) {
-//        return 15;
-//    }
-//    return 15;
-    return 5;
-}
-
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    NSLog(@"scrollViewDidScroll%@",NSStringFromCGPoint(scrollView.contentOffset));
+    //    NSLog(@"scrollViewDidScroll%@",NSStringFromCGPoint(scrollView.contentOffset));
     double page = scrollView.contentOffset.x / scrollView.width;
     self.pageControl.currentPage = (int) (page + 0.5);//设置四舍五入计算页码
     _isDraging = NO;
@@ -194,27 +156,6 @@
     
     [_scrollView setContentOffset:offset animated:YES];
 }
-- (void)PracticeDidClickButton:(PracticeButtonType)buttonType String:(NSString *)string
-{
-    subjectVC0 *pc = [[subjectVC0 alloc]init];
-    switch (buttonType) {
-        case 0:
-            pc.testType = @"rand";
-            break;
-            
-        default:pc.testType = @"order";
-            break;
-    }
-    NSLog(@"%u",buttonType);
-    pc.string = string;
-    
-    [self.navigationController pushViewController:pc animated:YES];
-}
-
-
-
-
-
 
 
 

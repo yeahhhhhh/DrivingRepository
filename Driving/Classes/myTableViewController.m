@@ -35,6 +35,7 @@
     [self loadUsers];
     self.navigationItem.rightBarButtonItem = [self itemwithTarget:self action:@selector(addFriend) image:@"navigationbar_friendsearch" Highimage:@"navigationbar_friendsearch_highlighted"];
     self.tableView.tableFooterView = [[UIView alloc]init]; //删除多余空cell
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:61/255.0 green:201/255.0 blue:106/255.0 alpha:1.0];//设置导航栏颜色
     
 }
 

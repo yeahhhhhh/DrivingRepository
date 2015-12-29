@@ -168,7 +168,7 @@
 - (void)back
 {
     [self.navigationController popViewControllerAnimated:YES];
-//    self.tabBarController.tabBar.hidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
 }
 #pragma mark - 键盘弹出时调用
 - (void)kayboardWillShowFrame:(NSNotification *)notification
