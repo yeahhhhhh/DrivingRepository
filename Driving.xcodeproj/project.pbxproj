@@ -17,6 +17,7 @@
 		273768CF1C32C3EB0085A1E9 /* foundLikeCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273768CD1C32C3EB0085A1E9 /* foundLikeCarTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		273A1ADA1C0AD91B0007CC48 /* addFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273A1AD91C0AD91B0007CC48 /* addFriendViewController.m */; settings = {ASSET_TAGS = (); }; };
 		273A1AE01C0ADF780007CC48 /* messagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273A1ADF1C0ADF780007CC48 /* messagesTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		274DF0E61C33D47D003A038B /* foundLikeCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 274DF0E51C33D47D003A038B /* foundLikeCarModel.m */; settings = {ASSET_TAGS = (); }; };
 		275E5A3E1C268BD900871F35 /* DrivingType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 275E5A3D1C268BD900871F35 /* DrivingType.plist */; settings = {ASSET_TAGS = (); }; };
 		27766A611C2EA975000C76E4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27766A601C2EA975000C76E4 /* FirstViewController.m */; settings = {ASSET_TAGS = (); }; };
 		27766A641C2EB623000C76E4 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 27766A631C2EB623000C76E4 /* UIBarButtonItem+Extension.m */; settings = {ASSET_TAGS = (); }; };
@@ -266,6 +267,8 @@
 		273A1AD91C0AD91B0007CC48 /* addFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addFriendViewController.m; sourceTree = "<group>"; };
 		273A1ADE1C0ADF780007CC48 /* messagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messagesTableViewController.h; sourceTree = "<group>"; };
 		273A1ADF1C0ADF780007CC48 /* messagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messagesTableViewController.m; sourceTree = "<group>"; };
+		274DF0E41C33D47D003A038B /* foundLikeCarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foundLikeCarModel.h; sourceTree = "<group>"; };
+		274DF0E51C33D47D003A038B /* foundLikeCarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foundLikeCarModel.m; sourceTree = "<group>"; };
 		275E5A3D1C268BD900871F35 /* DrivingType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrivingType.plist; sourceTree = "<group>"; };
 		27766A5F1C2EA975000C76E4 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		27766A601C2EA975000C76E4 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
@@ -798,6 +801,7 @@
 		273768C61C32A9D30085A1E9 /* Found */ = {
 			isa = PBXGroup;
 			children = (
+				274DF0E31C33D454003A038B /* Model */,
 				273768C81C32C2220085A1E9 /* View */,
 				273768C71C32A9F50085A1E9 /* Controller */,
 			);
@@ -821,6 +825,15 @@
 				273768CD1C32C3EB0085A1E9 /* foundLikeCarTableViewCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		274DF0E31C33D454003A038B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				274DF0E41C33D47D003A038B /* foundLikeCarModel.h */,
+				274DF0E51C33D47D003A038B /* foundLikeCarModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		279C03E91C0ED18600E9AEC4 /* Driving School */ = {
@@ -2226,6 +2239,7 @@
 				27AA68251C004FEB00ABD837 /* XMPPvCardTempCoreDataStorageObject.m in Sources */,
 				27C969731BE2768600797F3C /* SubjectOneFrame.m in Sources */,
 				27AA68091C004FEB00ABD837 /* XMPPRosterMemoryStorage.m in Sources */,
+				274DF0E61C33D47D003A038B /* foundLikeCarModel.m in Sources */,
 				27AA68531C004FEB00ABD837 /* XMPPTime.m in Sources */,
 				27AA68001C004FEB00ABD837 /* XMPPGoogleSharedStatus.m in Sources */,
 				27AA68401C004FEB00ABD837 /* XMPPCapabilities.m in Sources */,

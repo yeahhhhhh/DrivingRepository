@@ -9,23 +9,71 @@
 #import "ExamTableViewController.h"
 #import "UIView+Extension.h"
 #import "foundLikeCarTableViewCell.h"
+#import "AFNetworking.h"
+#import "MJExtension.h"
+#import "foundLikeCarModel.h"
 @interface ExamTableViewController ()
 @property (nonatomic ,strong) id cell;
+@property (nonatomic ,strong) NSMutableArray *mArray;
 @end
 
 @implementation ExamTableViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc]init]; //删除多余空cell
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:61/255.0 green:201/255.0 blue:106/255.0 alpha:1.0];//设置导航栏颜色
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+//    [self loadCarDatas];
 }
-
+#pragma mark -获取汽车数据
+//- (void)loadCarDatas
+//{
+//    
+//    // 1.请求管理者
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    // 2.拼接请求参数
+//    /**
+//     *  action	string	是	固定值:getCarAllBrand
+//        key	    string	是	应用APPKEY(应用详细页查询)
+//     */
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"key"] = @"d8631f1cfdc36a49163c783e51fc39ef";
+//    params[@"action"] = @"getCarAllBrand";
+//    
+//    // 3.发送请求
+//    [mgr GET:@"http://v.juhe.cn/carzone/series/query" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary * responseObject)
+//     {
+//         
+////         NSLog(@"请求成功-%@", responseObject);
+//         NSDictionary * resultDic = responseObject[@"result"];
+//         NSArray * detailArray = resultDic[@"detail"];
+//         NSArray *array = [foundLikeCarModel   objectArrayWithKeyValuesArray:detailArray];
+//         
+//         NSMutableArray * mArray = [[NSMutableArray alloc]init];
+//         for (foundLikeCarModel * f in array ) {
+//             [mArray addObject:f];
+//         }
+//         self.mArray = mArray;
+//         /**
+//          *  将json转换为plist文件
+//          */
+////          NSArray *array = [statusModle______ objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+////          NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+////          dict[@"result"] = [foundLikeCarModel keyValuesArrayWithObjectArray:array];
+////          dict[@"total_number"] = responseObject[@"total_number"];
+////          [dict writeToFile:@"/Users/huangxin/Desktop/huang.plist"  atomically:YES];
+////         [self.tableView reloadData];//刷新表格
+//         
+//     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
+//     {
+//         NSLog(@"请求失败-%@", error);
+//         
+//     }];
+//    
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,6 +83,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
+    
     // Return the number of sections.
     return 3;
 }
@@ -80,16 +129,24 @@
         
     }else if (indexPath.section == 1)
     {
+        
         foundLikeCarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         
         if (!cell)
         {
+            
             [tableView registerNib:[UINib nibWithNibName:@"foundLikeCarTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
             cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+//            cell.modelArray = self.mArray;
 //            cell1.delegate = self;
         }
         self.cell = cell;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        [self loadCarDatas];
+        NSLog(@"刷新表格 ");
+//        [self.tableView reloadData];//刷新表格
+        
+        
         return cell;
     }
     else{
